@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/favicon-site.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Faça seu cadastro</title>
+</head>
+<body>
+    <header class="cabecalho">
+    </header>
+    <main>
+        <section class="secao_formulario">
+            <ul class="lista-progresso">
+                <li class="item-progresso ativo">Acesso</li>
+                <li class="item-progresso ativo">Cadastro</li>
+                <li class="item-progresso ativo">Pagamento</li>
+            </ul>
+            <form class="container-formulario"> 
+                <h2 class="titulo-form">Falta pouco para concluir !</h2>
+                <fieldset class="form-pagamento secao-fieldset">
+                    <div class="container-pagamento">
+                        <legend class="titulo">Adicione a forma de pagamento</legend>
+                        <label for="numero-cartao" class="label-pagamento">Número do cartão</label>
+                        <input type="text" id="numero-cartao" class="inputs-pagamento numero-do-titular" minlength="12" maxlength="19">
+                        <label for="nome-titular" class="label-pagamento">Nome do titular</label>
+                        <input type="text" id="nome-titular" class="inputs-pagamento nome-do-titular" maxlength="30">
+
+                        <div class="seguranca-card">
+                            <input type="text" id="data-cartao" class="inputs-pagamento" placeholder="Expiração do cartão" maxlength="5">
+                            <input type="text" id="codigo-cartao" class="inputs-pagamento" placeholder="CVC do cartão" maxlength="4">
+                        </div>
+                        <span class="erro"></span>
+                        
+                        <div class="buttons">
+                            <button class="botao-voltar">Voltar</button>
+                            <button class="botao-prox" disabled>Finalizar Compra</button>
+                        </div>
+                    </div>
+                    <div class="container-card">
+                        <div class="cartao">
+                            <div class="cabecalho-card">
+                                <div class="bloco-aproximacao">
+                                    <img src="../img/Chip.svg" alt="" class="logo-chip">
+                                    <img src="../img/Subtract.png" alt="" class="logo-aproximacao">
+                                </div>
+                                <img src="../img/Visa.svg" alt="" class="bandeira-do-cartao">
+                            </div>
+                            
+                            <p class="numero-card">1234 5678 9123 4567</p>
+                            <div class="bloco-nome">
+                                <h3 class="titulo-nome">Nome do titular</h3>
+                                <p class="nome-card">Seu nome</p>
+                            </div>
+                        
+                            <div class="footer-card">
+                                <div class="bloco-expiracao">
+                                    <h3 class="titulo-expiracao">Expiração</h3>
+                                    <p class="data-expiracao">12/34</p>
+                                </div>
+    
+                                <div class="bloco-cvc">
+                                    <h3 class="titulo-cvc">CVC</h3>
+                                    <p class="codigo-cvc">123</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <script src="https://kit.fontawesome.com/c7d2131b9d.js" crossorigin="anonymous"></script>  
+    <script src="../app/pagamento.js" type="module"></script>
+</body>
+</html>

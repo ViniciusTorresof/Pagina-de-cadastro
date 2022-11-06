@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 1.6rem;
+    background-color: #161920;
+}
+
+.cabecalho {
+    width: 100%;
+    height: 80px;
+
+    margin: 0 auto;
+    padding-left: 20px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 2px solid #636060;
+}
+
+.secao_formulario {
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.secao_formulario 
+.lista-progresso {
+    width: 80%;
+    overflow: hidden;
+    counter-reset: step;
+    list-style: none;
+    margin: 25px 0;
+}
+
+.lista-progresso .item-progresso {
+    width: 33.33%;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+.lista-progresso .item-progresso::before {
+    content: counter(step);
+    counter-increment: step;
+    width: 3rem;
+    display: block;
+    line-height: 3rem;
+    background-color: #393939;
+    color: #fff;
+    font-size: 1.2rem;
+
+    border-radius: 50px;
+    margin: 0 auto 1rem auto;
+}
+
+.lista-progresso .item-progresso.ativo::after, 
+.item-progresso.ativo::before {
+    background-color: #00e7f9;
+    color: #0F1116;
+    transition:  all 1s;
+}
+
+.lista-progresso .item-progresso::after {
+    content: '';
+    width: 80%;
+    background-color: #393939;
+    height: 3px ;
+    position: absolute;
+    top: 13px;
+    left: -40%;
+}
+
+.lista-progresso .item-progresso:first-child::after{
+    content: none;
+}
+
+.secao_formulario .container-formulario {
+    width: 95%;
+    height: 600px;
+    margin: 0 auto;
+
+    border-radius: 5px;
+    background-color: #0F1116;
+    padding: 2rem;
+}
+
+.secao_formulario .container-formulario .titulo-form {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #e5e5e5;
+
+    margin: 20px 0;
+}
+
+/*Classes Reutilizáveis*/
+.container-formulario fieldset .titulo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00e7f9;
+}
+
+.container-formulario fieldset .botao-voltar, .botao-prox {
+    width: 100%;
+    height: 45px;
+    border-radius: 4px;
+    background-color: #00e7f9;
+
+    cursor: pointer;
+    transition: all .7s;
+}
+
+.container-formulario fieldset .botao-prox:disabled {
+    background-color: rgba(2, 145, 168, 0.9);
+    color: rgb(173, 173, 173);
+    cursor: no-drop;
+}
+
+
+.container-formulario fieldset .botao-voltar {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #00838c;
+    font-weight: 600;
+}
+
+.container-formulario fieldset .botao-voltar:hover, .botao-prox:hover {
+    background-color: #00838c;
+    border: none;
+    color: #000;
+}
+
+.form-pessoal .input-pessoal,
+.input-cadastral,
+.inputs-pagamento {
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #1a1d24;
+    color: #ccc;
+    padding: 0 20px;
+}
+/**/
+
+.container-formulario .form-pessoal {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 10px;
+}
+
+.form-pessoal .titulo {
+    margin-bottom: 15px;
+}
+
+.form-pessoal .input-pessoal::placeholder {
+    color: #ccc;
+}
+
+.form-pessoal .email, .botao-prox {
+    grid-column: 1/3;
+}
+
+.form-pessoal .lista-senha {
+    padding-left: 2rem;
+    grid-column: 1/3;
+}
+
+.form-pessoal .lista-senha .item-senha {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ccc;
+    margin: 3px 0;
+}
+
+.form-pessoal .botao-prox{
+    width: 80%;
+    height: 45px;
+    border-radius: 4px;
+    background-color: #00e7f9;
+    cursor: pointer;
+    transition: all .7s;
+
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.container-formulario .form-cadastral {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-cadastral .titulo-residencia {
+    margin-top: 40px;
+}
+
+.form-cadastral .label-cadastral {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ccc;
+    grid-row: 1/3;
+    margin-top: 10px;
+}
+
+.form-cadastral .container-cadastro {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 10px;
+}
+
+.form-cadastral .container-residencia {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    column-gap: 10px;
+    row-gap: 30px;
+}
+
+.form-cadastral  .input-residencial {
+    height: 45px;
+    padding-left: 20px;
+
+    background-color: transparent;
+    border-bottom: 1px solid #333;
+    color: #fff;
+}
+
+.form-cadastral .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.container-formulario .form-pagamento {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-pagamento .container-pagamento {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-pagamento .container-pagamento .label-pagamento {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ccc;
+    margin-top: 15px;
+}
+
+.form-pagamento .nome-do-titular {
+    margin-bottom: 20px;
+}
+
+.form-pagamento .seguranca-card {
+    display: flex;
+    gap: 10px;
+}
+
+.form-pagamento .seguranca-card input {
+    width: 100%;
+}
+
+.form-pagamento .buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.container-formulario .container-card .cartao {
+    width: 320px;
+    height: 210px;
+    border: 1px solid rgba(100, 98, 98, 0.2);
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(33, 37, 46), rgba(103, 109, 124, 0.1));
+    box-shadow: 0px 5px 15px 2px;
+    padding: 15px;
+}
+
+.cartao .cabecalho-card {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    grid-column: 1/3;
+}
+
+.cartao .cabecalho-card .bloco-aproximacao {
+    display: flex;
+    gap: 10px;
+}
+
+.cartao .cabecalho-card .bloco-aproximacao .logo-chip {
+    width: 35px;
+}
+
+.cartao .cabecalho-card .bandeira-do-cartao {
+    margin-right: 20px;
+    width: 75px;
+}
+
+.cartao .numero-card {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.cartao .bloco-nome {
+    margin-bottom: 5px;
+}
+
+.cartao .bloco-nome .titulo-nome{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #818181;
+}
+
+.cartao .bloco-nome .nome-card {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #ccc;
+}
+
+.cartao .footer-card {
+    display: flex;
+    gap: 70px;
+}
+
+.cartao .footer-card .titulo-expiracao, .titulo-cvc {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #818181;
+}
+
+.cartao .footer-card .data-expiracao, .codigo-cvc {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-left: 3px;
+}
+
+.secao_conclusao {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+}
+
+.secao_conclusao .container-conclusao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.secao_conclusao .container-conclusao .icone-conclusao {
+    width: 100%;
+    font-size: 5rem;
+    color: #fff;
+}
+
+.secao_conclusao .container-conclusao .titulo-conclusao {
+    font-size: 4rem;
+    font-weight: 500;
+    color: rgb(1, 163, 1);
+}
+
+.secao_conclusao .container-conclusao .descricao-conclusao {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #ccc;
+    max-width: 500px;
+}
+
+.erro-input {
+    outline: 1px solid rgb(249, 32, 32);
+}
+.erro {
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: #fff;
+}
+.erro .icone, #erro-senha {
+    color: rgb(251, 0, 0);
+}
+#check {
+    color: rgb(0, 185, 0);
+}
+
+@media (max-width: 790px) {
+    .lista-progresso .item-progresso::after {
+        content: '';
+        width: 60%;
+        left: -30%;
+    }
+    .form-cadastral .container-cadastro {
+        display: flex;
+        flex-direction: column;
+    }
+    .container-formulario .form-pagamento {
+        flex-direction: column-reverse;
+    }
+    .secao_formulario .container-formulario  {
+        height: auto;
+        margin-bottom: 40px;
+    }
+    .form-pagamento .container-pagamento {
+        width: 100%;
+    }
+
+}
+@media (max-width: 528px) {
+    .secao_formulario .container-formulario .titulo-form {
+        font-size: 1.6rem;
+    }
+    .secao_conclusao .container-conclusao .titulo-conclusao {
+        font-size: 3rem;
+    }
+    .secao_conclusao .container-conclusao .descricao-conclusao {
+        font-size: 1.8rem;
+        max-width: 390px;
+    }
+}
+@media (max-width: 400px) {
+    html {
+        font-size: 60%;
+    }
+    .lista-progresso .item-progresso {
+        font-size: 1rem;
+    }
+    .form-pessoal .lista-senha .item-senha {
+        font-size: 1.1rem;
+    }
+    .container-formulario .container-card .cartao {
+        width: 280px;
+    } 
+    .cartao .numero-card {
+        font-size: 2.3rem;
+    }
+}

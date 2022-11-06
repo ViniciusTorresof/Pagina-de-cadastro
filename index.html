@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon-site.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Faça seu cadastro</title>
+</head>
+<body>
+    <header class="cabecalho">
+    </header>
+    <main>
+        <section class="secao_formulario">
+            <ul class="lista-progresso">
+                <li class="item-progresso ativo">Acesso</li>
+                <li class="item-progresso">Cadastro</li>
+                <li class="item-progresso">Pagamento</li>
+            </ul>
+            <form class="container-formulario">
+                <h2 class="titulo-form">Crie seu acesso na plataforma</h2>
+                <fieldset class="form-pessoal secao-fieldset" id="form-active">
+                    <legend class="titulo">Insira seus dados</legend>
+
+                    <input type="text" class="input-pessoal nome"  placeholder="Nome">
+                    <input type="text" class="input-pessoal sobrenome" placeholder="Sobrenome">
+                    <input type="email" class="input-pessoal email" id="email" placeholder="Digite o seu email" required>
+                    <input type="email" class="input-pessoal email" id="confirmar-email" placeholder="Confirme o seu email" required>
+                    <input type="password" class="input-pessoal senha" id="senha" placeholder="Digite sua senha" required>
+                    <input type="password" class="input-pessoal confirmar-senha" id="confirmar-senha" placeholder="Confirme sua senha" required>
+
+                    <ul class="lista-senha">
+                        <li class="item-senha" id="length">A senha deve conter no mínimo 8 letras</li>
+                        <li class="item-senha" id="letra">Uma letra maiuscula e uma minuscula</li>
+                        <li class="item-senha" id="numero">Deve conter um número</li>
+                        <li class="item-senha" id="caracter">Deve conter um caracter especial</li>
+                        <li class="item-senha" id="senhas-iguais">As senhas devem ser iguais</li>
+                    </ul>
+                    <span class="erro"></span>
+                    <button class="botao-prox" type="submit" disabled>Próximo</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>~
+    <script src="https://kit.fontawesome.com/c7d2131b9d.js" crossorigin="anonymous"></script>
+    <script src="app/script.js" type="module"></script>  
+</body>
+</html>
